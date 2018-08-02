@@ -2,3 +2,4 @@ venv/
 *.pyc
 settings.pyc
 vscode/
+ui/node_modules/

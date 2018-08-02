@@ -607,10 +607,10 @@
     width: 40px
   }
   .navbar[_ngcontent-c1] .navbar-nav[_ngcontent-c1] li[_ngcontent-c1] > a[_ngcontent-c1]{
-    font-size:18px
+    font-size: 1em;
   }
   aside.left-panel[_ngcontent-c1]{
-    width: 18%;
+    width: 21%;
     padding:0;
   }
 

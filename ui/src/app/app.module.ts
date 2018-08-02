@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-// import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GmapComponent } from './gmap/gmap.component';
 import { NguiMapModule} from '@ngui/map';
 import { AppService } from '../app/app.service';
@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    GmapComponent
+    GmapComponent,
+    LandingPageComponent
   ],
   imports: [
     HttpModule,

@@ -35,9 +35,9 @@ export class GmapComponent implements OnInit {
           });
         }
       }, err => {
-          console.log("err")
+          console.log("err");
       });
-    }
+    });
   }
 
 }

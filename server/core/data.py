@@ -5,7 +5,7 @@ import string
 
 EarthRadius = 6371 # km
 OneDegree = EarthRadius * 2 * math.pi / 360 * 1000 # 1 degree latitude in meters
-NumberOfLocations = 27 # Number of test data needed
+NumberOfLocations = 36 # Number of test data needed
 
 def random_point_in_disk(max_radius):
     r = max_radius * random.random()**0.5
@@ -34,6 +34,7 @@ def get_list_of_random_location(lon, lat, max_radius):
         person["geo"] = rand_geo_details
         person["risk_profile"] = random.choice(settings.RISK_PROFILE)
         if person["risk_profile"] == 'HIGH':
+            person['risk_img'] = 'highrisk.png'
             if person["Age"] >= 50:
                 person["BP"] = random.randint(180, 220)
                 person["Heart Rate"] = random.randint(90, 120) # https://www.medicalnewstoday.com/articles/259201.php
@@ -41,6 +42,7 @@ def get_list_of_random_location(lon, lat, max_radius):
                 person["BP"] = random.randint(150, 180)
                 person["Heart Rate"] = random.randint(80, 110)
         elif person["risk_profile"] == 'MEDIUM':
+            person['risk_img'] = 'mediumrisk.png'
             if person["Age"] >= 50:
                 person["BP"] = random.randint(170, 180)
                 person["Heart Rate"] = random.randint(81, 90)
@@ -48,6 +50,7 @@ def get_list_of_random_location(lon, lat, max_radius):
                 person["BP"] = random.randint(130, 150)
                 person["Heart Rate"] = random.randint(71, 80)
         else:
+            person['risk_img'] = 'lowrisk.png'
             if person["Age"] >= 50:
                 person["BP"] = random.randint(160, 170)
                 person["Heart Rate"] = random.randint(63, 70)

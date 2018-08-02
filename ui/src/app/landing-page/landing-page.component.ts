@@ -19,6 +19,7 @@ export class LandingPageComponent implements OnInit {
   risk_people;
   high_risk_number;
   full_data = [];
+  risk_img = [];
 
   constructor(private http: Http, private router: Router, 
                 private route: ActivatedRoute, private _appService: AppService) { }
@@ -33,9 +34,11 @@ export class LandingPageComponent implements OnInit {
 
           // Map related points
           this.riskDataPoints = [];
+          this.risk_img = [];
           this.payloadBody = JSON.parse(res._body)
           this.payloadBody.forEach(element => {
             this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
+            this.risk_img.push([element['risk_img']]);
           });
         }
       }, err => {
@@ -50,9 +53,11 @@ export class LandingPageComponent implements OnInit {
       .subscribe((res:any) => {
         if (res) {
           this.riskDataPoints = [];
+          this.risk_img = [];
           this.payloadBody = JSON.parse(res._body)
           this.payloadBody.forEach(element => {
             this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
+            this.risk_img.push([element['risk_img']]);
           });
         }
       }, err => {

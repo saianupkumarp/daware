@@ -12,10 +12,10 @@
       <div id="main-menu" class="main-menu collapse navbar-collapse">
           <ul class="nav navbar-nav">
                 <li class="active">
-                        <a href="/"> <i class="menu-icon fa fa-medkit"></i>Predict Unhealth Pilgrims</a>
+                        <a href="/"> <i class="menu-icon fa fa-medkit"></i>Predict Unhealthy Pilgrims</a>
                 </li>
                 <li >
-                  <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                  <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Detect Abnormal Crowd</a>
               </li>
           </ul>
       </div><!-- /.navbar-collapse -->
@@ -40,8 +40,9 @@
                         (mapReady$)="onMapReady($event)"
                         (idle)="onMapReady($event)"
                         mapTypeId="satellite">
-                        <marker *ngFor="let pos of riskDataPoints" 
+                        <marker *ngFor="let pos of riskDataPoints; let i = index" 
                         (click)="showInfoWindow($event)"
+                        icon="../assets/img/{{risk_img[i]}}"
                         [position]="pos" >
                         </marker>
                     </ngui-map>

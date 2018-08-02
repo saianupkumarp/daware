@@ -30,8 +30,18 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <div class="map"></div>
-
+                <div class="map">
+                    <ngui-map 
+                        zoom="20" 
+                        center="21.422473, 39.826226"
+                        (mapReady$)="onMapReady($event)"
+                        (idle)="onMapReady($event)">
+                        <marker *ngFor="let pos of riskDataPoints" 
+                        (click)="showInfoWindow($event)"
+                        [position]="pos" >
+                        </marker>
+                    </ngui-map>
+                </div>
             </div>
         </div>
     </div>

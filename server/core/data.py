@@ -57,4 +57,5 @@ def get_list_of_random_location(lon, lat, max_radius):
         data.append(person)
     return json.dumps(data)
 
-
+def get_curr_temp():
+    return json.dumps(random.randint(35, 45))

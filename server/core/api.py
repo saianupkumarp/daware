@@ -12,5 +12,9 @@ def _paginate(items, **options):
     return dict(objects=items, metadata=dict(count=len(items), offset=offset))
 
 @rest_api.route('/get_crowd_risk', methods=['GET'])
-def get_dataset_profile():
+def location_details():
     return data.get_list_of_random_location(21.422663, 39.826128, 27)
+
+@rest_api.route('/get_current_temparature', methods=['GET'])
+def curr_temp():
+    return data.get_curr_temp()

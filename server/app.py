@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from flask_wtf import Form
 from core.api import rest_api
 from core.commands import command_manager
 import settings

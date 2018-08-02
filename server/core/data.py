@@ -5,7 +5,7 @@ import string
 
 EarthRadius = 6371 # km
 OneDegree = EarthRadius * 2 * math.pi / 360 * 1000 # 1 degree latitude in meters
-NumberOfLocations = 18
+NumberOfLocations = 18 # Number of test data needed
 
 def random_point_in_disk(max_radius):
     r = max_radius * random.random()**0.5

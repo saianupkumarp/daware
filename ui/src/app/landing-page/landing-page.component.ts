@@ -16,11 +16,22 @@ export class LandingPageComponent implements OnInit {
   sub;
   riskDataPoints = [];
   payloadBody;
+  risk_people;
+  full_data = [];
 
   constructor(private http: Http, private router: Router, 
                 private route: ActivatedRoute, private _appService: AppService) { }
 
   ngOnInit() {
+    this.http.get(environment.apiServer + 'api/get_crowd_risk')
+      .subscribe((res:any) => {
+        if (res) {
+          this.full_data = JSON.parse(res._body)
+          this.risk_people = this.full_data.length
+        }
+      }, err => {
+        console.log("err");
+    });
   }
 
   onMapReady(map) {

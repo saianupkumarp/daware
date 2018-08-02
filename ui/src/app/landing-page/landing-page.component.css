@@ -587,4 +587,9 @@
   .message-show + .dropdown-menu,
   .language-show + .dropdown-menu {
     display: block; }
+
+
+  .map{
+    /* height: 1800px; */
+  }
   

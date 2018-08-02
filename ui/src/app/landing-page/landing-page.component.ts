@@ -30,6 +30,13 @@ export class LandingPageComponent implements OnInit {
           this.full_data = JSON.parse(res._body)
           this.risk_people = this.full_data.length
           this.high_risk_number = this.full_data.filter(x=> x['risk_profile']==='HIGH').length;
+
+          // Map related points
+          this.riskDataPoints = [];
+          this.payloadBody = JSON.parse(res._body)
+          this.payloadBody.forEach(element => {
+            this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
+          });
         }
       }, err => {
         console.log("err");
@@ -52,6 +59,10 @@ export class LandingPageComponent implements OnInit {
           console.log("err");
       });
     });
+  }
+
+  showInfoWindow(event) {
+    console.log(event)
   }
 
 }

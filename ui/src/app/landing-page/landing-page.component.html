@@ -34,17 +34,56 @@
         <div class="card">
             <div class="card-bodyj">
                 <div class="gmap">
-                    <ngui-map style="height:548px;min-width:1040px"
+                        <ngui-map style="height:548px;min-width:1040px"
                         zoom="20" 
                         center="21.422473, 39.826226"
                         (mapReady$)="onMapReady($event)"
                         (idle)="onMapReady($event)"
                         mapTypeId="satellite">
                         <marker *ngFor="let pos of riskDataPoints; let i = index" 
-                        (click)="showInfoWindow(i)"
+                        (click)="showInfoWindow($event,i)"
                         icon="../assets/img/{{risk_img[i]}}"
                         [position]="pos" >
                         </marker>
+                        <info-window id="iw">
+                            <div *ngIf="marker.display">
+                                    
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <img src="http://placehold.it/150x150" alt="" class="" />
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <table style="margin:20px 10px;font-size: 14px"> 
+                                            <tr>
+                                                <td>User ID: </td>
+                                                <td>{{ ind.id }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nationality:</td>
+                                                <td>{{ ind.nationality }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Age:</td>
+                                                <td>{{ ind.age }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passport No.: </td>
+                                                <td>{{ ind.passno }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Blood Pressure: </td>
+                                                <td>{{ ind.bp }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Heart Rate:  </td>
+                                                <td>{{ ind.hr }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </info-window>
                     </ngui-map>
                 </div>
             </div>

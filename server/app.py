@@ -1,10 +1,12 @@
 from flask import Flask, render_template
+from flask_cors import CORS
 from core.api import rest_api
 from core.commands import command_manager
 import settings
 
 #Flask App
 app = Flask(__name__, static_url_path='/assets')
+CORS(app)
 app.config.from_object(settings)
 
 #ferret Rest api

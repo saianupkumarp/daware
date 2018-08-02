@@ -17,6 +17,7 @@ export class LandingPageComponent implements OnInit {
   riskDataPoints = [];
   payloadBody;
   risk_people;
+  high_risk_number;
   full_data = [];
 
   constructor(private http: Http, private router: Router, 
@@ -28,6 +29,7 @@ export class LandingPageComponent implements OnInit {
         if (res) {
           this.full_data = JSON.parse(res._body)
           this.risk_people = this.full_data.length
+          this.high_risk_number = this.full_data.filter(x=> x['risk_profile']==='HIGH').length;
         }
       }, err => {
         console.log("err");
@@ -35,7 +37,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   onMapReady(map) {
-    this.sub = Observable.interval(3000)
+    this.sub = Observable.interval(5000)
     .subscribe((val) => {
       this.http.get(environment.apiServer + 'api/get_crowd_risk')
       .subscribe((res:any) => {

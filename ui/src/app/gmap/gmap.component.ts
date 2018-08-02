@@ -31,13 +31,13 @@ export class GmapComponent implements OnInit {
           this.riskDataPoints = [];
           this.payloadBody = JSON.parse(res._body)
           this.payloadBody.forEach(element => {
-            this.riskDataPoints.push([element['Longitude'], element['Latitude']])
+            this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
           });
         }
       }, err => {
           console.log("err")
       });
-
     }
   }
+
 }

@@ -1,3 +1,12 @@
-<p>
-  gmap works!
-</p>
+<div class="full-screen">
+  <ngui-map 
+    zoom="20" 
+    center="21.422473, 39.826226"
+    (mapReady$)="onMapReady($event)"
+    (idle)="onMapReady($event)">
+    <marker *ngFor="let pos of riskDataPoints" 
+      (click)="showInfoWindow($event)"
+      [position]="pos" >
+    </marker>
+  </ngui-map>
+</div>

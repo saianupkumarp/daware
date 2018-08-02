@@ -13,4 +13,4 @@ def _paginate(items, **options):
 
 @rest_api.route('/get_crowd_risk', methods=['GET'])
 def get_dataset_profile():
-    return data.get_list_of_random_location(21.422663, 39.826128, 2)
+    return data.get_list_of_random_location(21.422663, 39.826128, 27)

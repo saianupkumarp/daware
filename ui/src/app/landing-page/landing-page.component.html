@@ -41,7 +41,7 @@
                         (idle)="onMapReady($event)"
                         mapTypeId="satellite">
                         <marker *ngFor="let pos of riskDataPoints; let i = index" 
-                        (click)="showInfoWindow($event)"
+                        (click)="showInfoWindow(i)"
                         icon="../assets/img/{{risk_img[i]}}"
                         [position]="pos" >
                         </marker>

@@ -20,6 +20,7 @@ export class LandingPageComponent implements OnInit {
   high_risk_number;
   full_data = [];
   risk_img = [];
+  risk_popup_data = [];
 
   constructor(private http: Http, private router: Router, 
                 private route: ActivatedRoute, private _appService: AppService) { }
@@ -35,10 +36,12 @@ export class LandingPageComponent implements OnInit {
           // Map related points
           this.riskDataPoints = [];
           this.risk_img = [];
+          this.risk_popup_data = []
           this.payloadBody = JSON.parse(res._body)
           this.payloadBody.forEach(element => {
             this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
             this.risk_img.push([element['risk_img']]);
+            this.risk_popup_data.push([element['Name'], element['Nationality'], element['Age'], element['Passport Number'], element['BP'], element['Heart Rate']]);
           });
         }
       }, err => {
@@ -54,10 +57,12 @@ export class LandingPageComponent implements OnInit {
         if (res) {
           this.riskDataPoints = [];
           this.risk_img = [];
+          this.risk_popup_data = []
           this.payloadBody = JSON.parse(res._body)
           this.payloadBody.forEach(element => {
             this.riskDataPoints.push([element['Longitude'], element['Latitude']]);
             this.risk_img.push([element['risk_img']]);
+            this.risk_popup_data.push([element['Name'], element['Nationality'], element['Age'], element['Passport Number'], element['BP'], element['Heart Rate']]);
           });
         }
       }, err => {
@@ -66,8 +71,8 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  showInfoWindow(event) {
-    console.log(event)
+  showInfoWindow(ind_num) {
+    console.log(this.risk_popup_data[ind_num])
   }
 
 }

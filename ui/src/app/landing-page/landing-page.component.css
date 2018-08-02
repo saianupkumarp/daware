@@ -593,3 +593,28 @@
     /* height: 1800px; */
   }
   
+
+  .active{
+    font-weight: 700 !important;
+  }
+
+
+  .navbar[_ngcontent-c1] .navbar-nav[_ngcontent-c1] li[_ngcontent-c1] > a[_ngcontent-c1]{
+    display: inline !important;
+  }
+
+  .navbar[_ngcontent-c1] .navbar-nav[_ngcontent-c1] li[_ngcontent-c1] > a[_ngcontent-c1] .menu-icon[_ngcontent-c1]{
+    width: 40px
+  }
+  .navbar[_ngcontent-c1] .navbar-nav[_ngcontent-c1] li[_ngcontent-c1] > a[_ngcontent-c1]{
+    font-size:18px
+  }
+  aside.left-panel[_ngcontent-c1]{
+    width:520px;
+    padding:0;
+  }
+
+  .navbar[_ngcontent-c1] .navbar-nav[_ngcontent-c1] li[_ngcontent-c1]{
+    padding: 10px 30px ;
+  }
+  

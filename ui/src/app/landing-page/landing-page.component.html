@@ -39,6 +39,7 @@
                         center="21.422473, 39.826226"
                         (mapReady$)="onMapReady($event)"
                         (idle)="onMapReady($event)"
+                        (mouseover)="onMapHover($event)"
                         mapTypeId="satellite">
                         <marker *ngFor="let pos of riskDataPoints; let i = index" 
                         (click)="showInfoWindow($event,i)"

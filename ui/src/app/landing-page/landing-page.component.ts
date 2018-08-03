@@ -85,6 +85,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   showInfoWindow({target: marker}, ind_num) {
+    this.sub.unsubscribe();
     console.log(this.risk_popup_data[ind_num]);
     // this.marker.lat = marker.getPosition().lat();
     // this.marker.lng = marker.getPosition().lng();
@@ -97,6 +98,10 @@ export class LandingPageComponent implements OnInit {
 
     marker.nguiMapComponent.openInfoWindow('iw', marker);
     // this.infowindow.open(map,ind_num);
+  }
+
+  onMapHover(ev){
+    this.sub.unsubscribe();
   }
 
 }
